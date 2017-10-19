@@ -1,12 +1,12 @@
 # < 0 > | **The Server4Dead Project**
 
-<== IMPORTANT NOTICE DON'T IGNORE THIS OKAY?! ===>
-<------------------ **LINUX SUPPORT ONLY** ------------------>
+<== IMPORTANT NOTICE DON'T IGNORE THIS OKAY?! ===>  
+<------------------ **LINUX SUPPORT ONLY** ------------------>  
 < This means Windows is not Supported, so don't ask~ :smile: >
 > **Project's Purpose:**
 
-This Project's purpose is to make it very easy to get Servers ready for people interested in hosting their own servers for Left 4 Dead 2.
-Feel free to contact me on [Steam](http://steamcommunity.com/id/SirPlease/) regarding the project.
+This Project's purpose is to make it very easy to get Servers ready for people interested in hosting their own servers for L4D2.  
+Feel free to contact me on [Steam](http://steamcommunity.com/id/SirPlease/) regarding the project.  
 Also, definitely take a look at [Issues](https://github.com/SirPlease/Server4Dead-Project/issues) to see what's being worked on and or discussed, or to simply request for something to be added to the Project.
 
 > **Recommended Server Specifications:**
@@ -50,7 +50,8 @@ Also, definitely take a look at [Issues](https://github.com/SirPlease/Server4Dea
 
 > **Coming up / In Progress:**
 * Additional Competitive Configs.
-* Instructions for protecting your Server from small DoS attacks that slip past DDoS filtering. (**Low Priority, as these are filtered by any decent Host that focuses on Game Server with Dedicated Servers**)
+* Instructions for protecting your Server from small DoS attacks that slip past DDoS filtering. 
+  * **Low Priority: as these are filtered by any decent Host that focuses on Game Server with Dedicated Servers**
 
 - - - -
 # < 2 > | **F.A.Q.**
@@ -59,19 +60,19 @@ Also, definitely take a look at [Issues](https://github.com/SirPlease/Server4Dea
 
 > **Something isn't working and the F.A.Q. doesn't provide answers either!**
 
-Both of these can be requested/reported in Github's issue tracker for this Project.
+Both of these can be requested/reported in Github's issue tracker for this Project.  
 You can do this [**here**](https://github.com/SirPlease/Server4Dead-Project/issues).
 
 > **I've installed the Tickrate Enabler and set my tickrate to 101 or higher, but on the net_graph the bottom value will still be 100!**
 
-This is because it's a hardcoded limit in the client, but don't worry, it's only a visual thing.
+This is because it's a hardcoded limit in the client, but don't worry, it's only a visual thing.  
 The two middle values on net_graph show you what you're actually getting from the Server.
 
 > **I've installed the Tickrate Enabler, but one or both the middle values aren't reaching the Tickrate set**
 
-First, make sure that you've properly adjusted your rates in the server.cfg as well.
-If everything is set correctly check if the "**sv**" (check the net_graph) isn't struggling to stay above the Tickrate's value, as this will decrease the amount of updates clients are getting from the Server.
-Regarding updaterate, this will only be a client problem if the client has a laggy connection to the Server and is dropping packets.
+First, make sure that you've properly adjusted your rates in the server.cfg as well.  
+If everything is set correctly check if the "**sv**" (check the net_graph) isn't struggling to stay above the Tickrate's value, as this will decrease the amount of updates clients are getting from the Server.  
+Regarding updaterate, this will only be a client problem if the client has a laggy connection to the Server and is dropping packets.  
 
-The amount of commands a client can send to the Server is limited to the client framerate.
+The amount of commands a client can send to the Server is limited to the client framerate.  
 If you're only getting 60fps, you'll never have an actual cmdrate of above 60.

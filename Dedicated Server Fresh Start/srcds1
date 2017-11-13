@@ -46,13 +46,13 @@ DESC="L4D2 Dedicated Server #$SVNUM on port $PORT"
 #           DON'T TOUCH THESE             #
 #                                         #
 ###########################################
-
+## Ajouter la compression journaliere de screelog.0 et ajouter la possibilite de rs normalement
 case "$1" in
 	start)
 		echo "Starting $DESC: $NAME"
 		if [ -e $DIR ]; then
 			cd $DIR
-			su $SRCDS_USER -l -c "screen -d -m -S $NAME $DAEMON $PARAMS"
+			su $SRCDS_USER -l -c "screen -AdmSL $NAME $DAEMON $PARAMS"
 		else
 			echo "No such directory: $DIR!"
 		fi
@@ -78,7 +78,7 @@ case "$1" in
 		fi
 		echo -n "Starting $DESC: $NAME"
 		cd $DIR
-		su $SRCDS_USER -l -c "screen -d -m -S $NAME $DAEMON $PARAMS"
+		su $SRCDS_USER -l -c "screen -AdmSL $NAME $DAEMON $PARAMS"
 		echo " ... done."
 		;;
 

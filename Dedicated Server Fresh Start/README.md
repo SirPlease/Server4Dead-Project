@@ -7,9 +7,11 @@ For this you will need to make use of an SSH Client such as [Putty](http://www.p
 > Simply enter these commands into your Terminal after connecting and logging in to your Dedicated Server with your SSH Client.
 
 **dpkg --add-architecture i386 # enable multi-arch  
-apt-get update && apt-get upgrade  
-apt-get install libc6:i386 # install base 32bit libraries  
-apt-get install lib32z1**
+apt update && apt upgrade
+apt install gcc gdb lib32gcc1  
+apt install libc6:i386 # install base 32bit libraries  
+apt install lib32ncurses5 lib32z1
+apt install gdb # For debug srcds**
 
 > **Creating a User to run the Servers on**  
 > You don't want to be running these services on root, do you?!  

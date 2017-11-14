@@ -5,7 +5,7 @@
 < This means Windows is not Supported, so don't ask~ :smile: >
 > **Project's Purpose:**
 
-This Project's purpose is to make it very easy to get Servers ready for people interested in hosting their own servers for L4D2.  
+This Project's purpose is to make it very easy to get Optimized Servers ready for people interested in hosting their own servers for L4D2.  
 Feel free to contact me on [Steam](http://steamcommunity.com/id/SirPlease/) regarding the project.  
 Also, definitely take a look at [Issues](https://github.com/SirPlease/Server4Dead-Project/issues) to see what's being worked on and or discussed, or to simply request for something to be added to the Project.
 
@@ -43,6 +43,7 @@ Also, definitely take a look at [Issues](https://github.com/SirPlease/Server4Dea
   * Perfect for both "Vanilla" and Competitive Servers. 
   * Easy to understand, as everything is explained within the Server.cfg.
   * Easy to modify to work with **30**, **60**, **100**, **128** or any other Tickrate.
+  * Addons are disabled by default (registered Casters can use addons) - Check the Server.cfg for details.
 * **Competitive Configs:**
   * **ZoneMod** [1.6](https://github.com/SirPlease/ZoneMod) (1v1, 2v2, 3v3, 4v4)
   * **Apex** [1.1.2](https://github.com/SirPlease/Apex) (4v4) 
@@ -51,7 +52,7 @@ Also, definitely take a look at [Issues](https://github.com/SirPlease/Server4Dea
 > **Coming up / In Progress:**
 * Additional Competitive Configs.
 * Instructions for protecting your Server from small DoS attacks that slip past DDoS filtering. 
-  * **Low Priority: as these are filtered by any decent Host that focuses on Game Server with Dedicated Servers**
+  * **Low Priority: as these are filtered by any decent Host that cares about Game Server hosting.**
 
 - - - -
 # < 2 > | **F.A.Q.**
@@ -63,12 +64,12 @@ Also, definitely take a look at [Issues](https://github.com/SirPlease/Server4Dea
 Both of these can be requested/reported in Github's issue tracker for this Project.  
 You can do this [**here**](https://github.com/SirPlease/Server4Dead-Project/issues).
 
-> **I've installed the Tickrate Enabler and set my tickrate to 101 or higher, but on the net_graph the bottom value will still be 100!**
+> **I've installed the Tickrate Enabler and set my tickrate to 128 or higher, but on the net_graph the bottom value will still be 100!**
 
 This is because it's a hardcoded limit in the client, but don't worry, it's only a visual thing.  
 The two middle values on net_graph show you what you're actually getting from the Server.
 
-> **I've installed the Tickrate Enabler, but one or both the middle values aren't reaching the Tickrate set**
+> **I've installed the Tickrate Enabler, but one or both the middle values aren't reaching the Tickrate set**.
 
 First, make sure that you've properly adjusted your rates in the server.cfg as well.  
 If everything is set correctly check if the "**sv**" (check the net_graph) isn't struggling to stay above the Tickrate's value, as this will decrease the amount of updates clients are getting from the Server.  

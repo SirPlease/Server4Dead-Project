@@ -110,7 +110,7 @@ case "$1" in
 		echo "Starting $DESC: $NAME"
 		if [ -e $DIR ]; then
 			cd $DIR
-			su $SRCDS_USER -l -c "screen -AdmSL $NAME $DAEMON $PARAMS"
+			su $SRCDS_USER -l -c "screen -AdmS l4d2 -L screenlog.0 $NAME $DAEMON $PARAMS"
 		else
 			echo "No such directory: $DIR!"
 		fi

@@ -1,7 +1,37 @@
-#!/bin/sh
+#!/bin/bash
+
+BLACK="\033[1;30m"
+RED="\033[1;31m"
+GREEN="\033[1;32m"
+BLUE="\033[1;34m"
+MAGENTA="\033[0;35m"
+CYAN="\033[1;36m"
+WHITE="\033[0;37m"
+NORMAL="\033[0;39m"
 
 # replace "steam" with the user you created, leave it alone if you've actually called your user "steam"
 SRCDS_USER="steam"
+
+FONCUSER () {
+grep -w "$SRCDS_USER" /etc/passwd &> /dev/null
+
+if [ 0 -ne $? ]; then 
+echo -e "${RED}$SRCDS_USER was not found.${NORMAL}";
+exit 1;
+else
+if [[ "$SRCDS_USER" =~ ^[a-z0-9]{3,}$ ]]; then
+# shellcheck disable=SC2104
+echo Ok >/dev/null
+else
+echo "${RED}The account name must be lowercase, contain more than\nthree letters and without special characters.${NORMAL}"
+fi
+fi
+}
+
+FONCUSER
+
+#Check if sudo is installed
+if [ ! -x `which sudo` ]; then echo "${RED}ERROR: sudo was not installed, with root user, run: apt install sudo and configure it${NORMAL}"; exit 1; fi
 
 # Do not change this path
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
@@ -9,6 +39,12 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin
 # The path to the game, only change this if you have a different installation path than in the guide.
 DIR=/home/steam/Steam/steamapps/common/l4d2
 DAEMON="$DIR/srcds_run"
+
+#Get date
+NOW="`date +%m-%d-%y`"
+
+#Get file name
+FILENAME=`echo ${0##*/} | awk -F. '{print $1}'`
 
 # Change all Parameters to your needs.
 
@@ -40,19 +76,41 @@ NAME=L4D2_Server$SVNUM
 PARAMS="-game left4dead2 -ip $IP -port $PORT +sv_clockcorrection_msecs 15 -timeout 10 -tickrate 100 +map c1m1_hotel -maxplayers 32 +servercfgfile server$SVNUM.cfg"
 DESC="L4D2 Dedicated Server #$SVNUM on port $PORT"
 
+echo
+echo "------------------------------------------------------------------------------"
+echo
+echo -e " ${GREEN}To restart your game server every day with screenlog file compression at 06:00 am.${NORMAL}"
+echo -e " ${GREEN}Run ${RED}crontab -e ${GREEN}with ${RED}$SRCDS_USER ${GREEN}user${NORMAL}"
+echo -e " ${GREEN}Add: "
+echo ""
+echo '  */6 * * * * ~/$FILENAME rs'
+echo
+echo "------------------------------------------------------------------------------"
+fonctionpause
 
+fonctionpause(){
+echo ""
+echo -e "${GREEN}Press ${RED}ENTER ${GREEN}to continue...${NORMAL}"
+read touche
+case $touche in
+*)	echo ''
+    clear
+	;;
+esac
+}
+	
 ###########################################
 #                                         #
 #           DON'T TOUCH THESE             #
 #                                         #
 ###########################################
-
+## Ajouter la compression journaliere de screelog.0 et ajouter la possibilite de rs normalement
 case "$1" in
 	start)
 		echo "Starting $DESC: $NAME"
 		if [ -e $DIR ]; then
 			cd $DIR
-			su $SRCDS_USER -l -c "screen -d -m -S $NAME $DAEMON $PARAMS"
+			su $SRCDS_USER -l -c "screen -AdmS l4d2 -L screenlog.0 $NAME $DAEMON $PARAMS"
 		else
 			echo "No such directory: $DIR!"
 		fi
@@ -78,10 +136,17 @@ case "$1" in
 		fi
 		echo -n "Starting $DESC: $NAME"
 		cd $DIR
-		su $SRCDS_USER -l -c "screen -d -m -S $NAME $DAEMON $PARAMS"
+		su $SRCDS_USER -l -c "screen -AdmSL $NAME $DAEMON $PARAMS"
 		echo " ... done."
-		;;
-
+	;;
+	rs)
+		stop
+		cd $DIR 
+		tar cvf $NOW-screenlog.tgz screenlog.0
+		rm -rf screenlog.0
+		sleep 1
+		start
+	;;		
 	status)
 		# Check whether there's a "srcds" process
 		ps aux | grep -v grep | grep srcds_r > /dev/null

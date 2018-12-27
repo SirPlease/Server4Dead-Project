@@ -45,7 +45,7 @@ Also, definitely take a look at [Issues](https://github.com/SirPlease/Server4Dea
   * Easy to modify to work with **30**, **60**, **100**, **128** or any other Tickrate.
   * Addons are disabled by default (registered Casters can use addons) - Check the Server.cfg for details.
 * **Competitive Configs:**
-  * **ZoneMod** [1.6](https://github.com/SirPlease/ZoneMod) (1v1, 2v2, 3v3, 4v4)
+  * **ZoneMod** [1.9.3](https://github.com/SirPlease/ZoneMod) (1v1, 2v2, 3v3, 4v4)
   * **Apex** [1.1.2](https://github.com/SirPlease/Apex) (4v4) 
       * Includes **Apex Hunters** (1v1, 2v2, 3v3, 4v4)
 

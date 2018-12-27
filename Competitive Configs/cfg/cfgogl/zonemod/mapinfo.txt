@@ -214,7 +214,7 @@
 		"start_extra_dist"  "0.000000"
 		"end_dist"          "250.000000"
 		"tank_ban_flow_min" "49"
-		"tank_ban_flow_max" "52"
+		"tank_ban_flow_max" "54"
 		"horde_limit"       "240"
 	}
 	"c5m3_cemetery"
@@ -649,6 +649,7 @@
 		"start_extra_dist"  "251.028473"
 		"tank_ban_flow_min" "0"
 		"tank_ban_flow_max" "28"
+		"max_distance"      "700"
 	}
 	"cdta_05finalroad"
 	{
@@ -737,6 +738,7 @@
 		"start_extra_dist"  "329.797272"
 		"end_point"         "2004.079468 1037.415161 -188.618408"
 		"end_dist"          "304.708099"
+		"max_distance"      "600"
 	}
 	"l4d_ihm05_lakeside"
 	{

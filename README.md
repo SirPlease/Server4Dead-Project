@@ -28,6 +28,24 @@ Also, definitely take a look at [Issues](https://github.com/SirPlease/Server4Dea
   * One of the best DDoS Protection services (if not the best) you can get.
     * Comes for free, included in the price for Dedicated Servers. 
   * Solid Network, low latency.
+  
+* Amazon (**Worldwide**)
+  * Solid performance (When you have CPU Credits available)
+  * Quality DDoS Protection.
+  * Allowed to setup additional Firewall rules on the go.
+  * Downside is the hidden costs, the price you see when aquiring a server will be far lower then what you end up paying.
+    * Bandwidth Costs.
+	* CPU Credit Costs (depending on if you buy unlimited burst, if you do not, then your Server will be unplayable on and you can forget "quality performance")
+  
+> **Do not rent from these Hosts (Tested):**
+* Vilayer (Worldwide)
+  * Your server takes forever to setup, if they even plan to do so at all.
+  * Support tickets requesting refunds are closed rather fast, you need to use external measures such as Paypal disputes to actually get your money back.
+  * 3.5/10 rating on Trustpilot.
+
+* PhotonVPS (US, SA, Asia, Africa)
+  * Tech Support is unable to add simple firewall ACL rules that should filter out small DoS attacks that somehow slip past their promised DDoS Protection.
+  
 
 - - - -
 # < 1 > | **Project Current Status**
